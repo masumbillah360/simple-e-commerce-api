@@ -35,7 +35,7 @@ const searchProduct = async()=>{
         // console.log(searchedProdcuts) 
         productsContainer.textContent = ''
         searchedProdcuts.forEach(product=>{
-            console.log(product);
+            // console.log(product);
             const {title,price,image,category} = product;
             const productArticle = document.createElement('article');
             productArticle.innerHTML = `
@@ -59,9 +59,10 @@ searchField.addEventListener('keypress',(e)=>{
 })
 document.getElementById('search-btn').addEventListener('click',()=>{
     searchProduct()
-    searchField.value = ''
+    searchField.value = ' ';
 })
 
 
 
 setCategory()
+searchProduct()
