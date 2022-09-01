@@ -55,7 +55,6 @@ searchField.addEventListener('keypress',(e)=>{
     if (e.key === "Enter") {
         searchProduct()
     }
-    searchField.value = ''
 })
 document.getElementById('search-btn').addEventListener('click',()=>{
     searchProduct()
