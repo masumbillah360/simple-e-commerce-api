@@ -11,21 +11,23 @@
 </head>
 <body>
     <header class="text-center my-8">
-        <h1>Best E-commerce</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nostrum neque rerum, asperiores earum ipsum voluptatibus ex optio eveniet cum!</p>
+        <h1 class="text-6xl font-bold text-orange-600">Best E-commerce</h1>
+        <p>Buy Your Favorite Products on the bes E-commerce site</p>
         <div class="">
             <!-- <input id="search-field" type="text"> -->
-            <input id="search-field" type="text">
-            <button id="search-btn">Search</button>
+            <div class="my-4">
+                <input id="search-field" type="text" placeholder="Type here" class="input input-bordered input-error w-full max-w-xs" />
+                <button id="search-btn" class="btn btn-active btn-secondary">Button</button>
+            </div>
         </div>
     </header>
 
     <main class="container mx-auto ">
-        <section class="flex">
-            <ul id="cat-container" class="grow rounded-box p-2">
+        <section class="grid grid-cols-1 lg:grid-cols-5 gap-3">
+            <ul id="cat-container" class="rounded-box p-2 text-center mx-auto">
             </ul>
             <!-- product card's start here  -->
-            <article id="product-container" class="grow grid grid-cols-4 gap-4">
+            <article id="product-container" class="col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 <h1 class="text-center">search Product or select products</h1>
             </article>
             

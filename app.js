@@ -4,8 +4,6 @@ const dataLoader = async()=>{
     return data;
 }
 
-// dataLoader();
-
 const setCategory = async()=>{
     const data = await dataLoader();
     const catContainer = document.getElementById('cat-container');
@@ -16,12 +14,11 @@ const setCategory = async()=>{
         if (uniqueCategorys.indexOf(product.category) === -1) {
             uniqueCategorys.push(product.category);
             cat.innerHTML = `
-            <a href="#">${product.category}</a>
+            <button>${product.category}</button>
             ` 
             catContainer.appendChild(cat)
         }
     }
-    // console.log(uniqueCategorys)
 }
 
 const searchProduct = async()=>{
@@ -36,7 +33,7 @@ const searchProduct = async()=>{
         // console.log(searchedProdcuts) 
         productsContainer.textContent = ''
         searchedProdcuts.forEach(product=>{
-            console.log(product);
+            // console.log(product);
             const {title,price,image,category,description} = product;
             const productArticle = document.createElement('div');
             productArticle.classList.add('card','bg-base-100','shadow-xl')
@@ -68,7 +65,5 @@ document.getElementById('search-btn').addEventListener('click',()=>{
     searchField.value = ' ';
 })
 
-
-
 setCategory()
-// searchProduct()
+searchProduct()
