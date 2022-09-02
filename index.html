@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cupcake">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- daisyui and tailwindcss link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>simple E-commerce api</title>
 </head>
 <body>
-    <header style="text-align: center;">
+    <header class="text-center my-8">
         <h1>Best E-commerce</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nostrum neque rerum, asperiores earum ipsum voluptatibus ex optio eveniet cum!</p>
         <div class="">
@@ -17,15 +20,20 @@
         </div>
     </header>
 
-    <main>
-        <section>
-            <ul id="cat-container">
+    <main class="container mx-auto ">
+        <section class="flex">
+            <ul id="cat-container" class="grow rounded-box p-2">
             </ul>
-            <div id="product-container" class="">
-
-            </div>
+            <!-- product card's start here  -->
+            <article id="product-container" class="grow grid grid-cols-4 gap-4">
+                <h1 class="text-center">search Product or select products</h1>
+            </article>
+            
         </section>
     </main>
+    <footer class="p-24 mt-6 text-center">
+        <p>&copy;copyeright reserve : Masum Billah</p>
+    </footer>
 
     <script src="./app.js"></script>
 </body>

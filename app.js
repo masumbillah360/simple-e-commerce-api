@@ -12,6 +12,7 @@ const setCategory = async()=>{
     const uniqueCategorys = [];
     for(const product of data ){
         const cat = document.createElement('li');
+        cat.classList.add('py-4','w-48')
         if (uniqueCategorys.indexOf(product.category) === -1) {
             uniqueCategorys.push(product.category);
             cat.innerHTML = `
@@ -35,14 +36,20 @@ const searchProduct = async()=>{
         // console.log(searchedProdcuts) 
         productsContainer.textContent = ''
         searchedProdcuts.forEach(product=>{
-            // console.log(product);
-            const {title,price,image,category} = product;
-            const productArticle = document.createElement('article');
+            console.log(product);
+            const {title,price,image,category,description} = product;
+            const productArticle = document.createElement('div');
+            productArticle.classList.add('card','bg-base-100','shadow-xl')
             productArticle.innerHTML = `
-            <h1>${title}</h1>
-            <h1>${price}</h1>
-            <img src="${image}" style= "width: 150px; height: 200px">
-            <h1>${category}</h1>
+            <figure><img class="h-32" src="${image}" alt=".." /></figure>
+                    <div class="card-body">
+                      <span>${category}</span>
+                      <h2 class="card-title">${title.length>20?title.slice(0,20)+'...':title}</h2>
+                      <p>price : ${price}</p>
+                      <p>${description.length>100?description.slice(0,100)+'...':description}</p>
+                      <div class="card-actions justify-end">
+                      </div>
+                    </div>
             `
             productsContainer.appendChild(productArticle)
         })
@@ -64,4 +71,4 @@ document.getElementById('search-btn').addEventListener('click',()=>{
 
 
 setCategory()
-searchProduct()
+// searchProduct()
